@@ -1,7 +1,26 @@
 {
-  "ravi": "Engineer",
-  "sita": "Teacher",
-  "rahul": "Developer",
-  "anita": "Doctor",
-  "charan": "Scientist"
+  "ravi":[
+    "Success follows those who stay consistent.",
+    "Your journey is stronger than your fears."
+  ],
+  "rahul":[
+    "Dream big, start small, act now.",
+    "Confidence is your real superpower."
+  ],
+  "sita":[
+    "Kindness always creates silent strength.",
+    "Your calm mind is your greatest weapon."
+  ],
+  "anita":[
+    "Growth begins where comfort ends.",
+    "Believe in your quiet power."
+  ],
+  "charan":[
+    "You are building something bigger than today.",
+    "Focus, patience, and courage define you."
+  ],
+  "teja":[
+    "Energy flows where passion grows.",
+    "Keep moving — progress is happening."
+  ]
 }

@@ -1,18 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Name Occupation Predictor</title>
+  <title>AI Occupation Predictor</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="box">
-  <h2>Occupation Predictor</h2>
+<div class="container">
 
-  <input type="text" id="nameInput" placeholder="Enter Name">
-  <button onclick="predict()">Predict</button>
+  <h1>🤖 AI Occupation Predictor</h1>
 
-  <p id="result"></p>
+  <div class="input-box">
+    <input type="text" id="nameInput" placeholder="Enter your name..." />
+   <button onclick="generateQuote()">Generate Quote</button>
+  </div>
+
+  <div id="resultBox"></div>
+
 </div>
 
 <script src="script.js"></script>
