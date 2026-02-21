@@ -6,29 +6,39 @@ document
 
 async function generateQuote(){
 
-  const name=document
+  let name=document
     .getElementById("nameInput")
-    .value
-    .toLowerCase();
-
-  const res=await fetch("data.json");
-  const data=await res.json();
+    .value;
 
   const box=document.getElementById("resultBox");
+
+  // ✅ Remove spaces & make lowercase
+  name=name.trim().toLowerCase();
+
+  // ✅ Only letters allow (name validation)
+  const namePattern=/^[a-zA-Z]+$/;
 
   if(!name){
     box.innerHTML="⚠️ Please enter a name";
     return;
   }
 
+  if(!namePattern.test(name)){
+    box.innerHTML="❌ Enter a valid name (letters only)";
+    return;
+  }
+
+  const res=await fetch("data.json");
+  const data=await res.json();
+
   let quotes=data[name];
 
-  // If name not found → default AI style quotes
+  // Default quotes if name not found
   if(!quotes){
     const defaultQuotes=[
       "Your story is still being written.",
       "Believe in the process.",
-      "You are closer than you think."
+      "You are stronger than yesterday."
     ];
 
     const random=defaultQuotes[
@@ -39,12 +49,9 @@ async function generateQuote(){
     return;
   }
 
-  // Random quote from name list
   const randomQuote=quotes[
     Math.floor(Math.random()*quotes.length)
   ];
 
-  box.innerHTML=`<div class="result-card">
-  💬 ${randomQuote}
-  </div>`;
+  box.innerHTML=`<div class="result-card">💬 ${randomQuote}</div>`;
 }
